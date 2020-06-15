@@ -1,4 +1,5 @@
 // https://cs50.harvard.edu/x/2020/psets/1/mario/more/
+
 #include <stdio.h>
 #include <math.h>
 #include <cs50.h>
@@ -23,11 +24,8 @@ int main(void)
     int digitCount = 0;
     do
     {
-        // printf("check %li\n", check);
-
         // Multiply every-other-digit by 2, starting from second-to-last digit
         dup = ((check % 100) / 10) * 2;
-        // printf("dup %li\n", dup);
 
         // Add products’ digits together
         if (dup < 10)
@@ -38,15 +36,10 @@ int main(void)
         {
             sumDup += (dup % 10) + 1;
         }
-  
-        // printf("sumDup %li\n", sumDup);
 
         // Calculate sum of the digits that weren’t multiplied by 2
         calc = check % 10;
         sumCalc += calc;
-  
-        // printf("calc %li\n", calc);
-        // printf("sumCalc %li\n", sumCalc);
   
         // Card length
         if (check >= 10)
@@ -57,20 +50,17 @@ int main(void)
         {
             digitCount += 1;
         }
-        // printf("digitCount %i\n", digitCount);
+        
         check = check / 100;
-        // printf("###\n");
+
     }
     while (check > 1);
 
     long checkSum = sumDup + sumCalc;
-    // printf("checkSum %li\n", checkSum);
     // End of checkSum calculation
 
     // Check starting digits
     long startingDigits = number / (double) pow(10, digitCount - 2);
-    // printf("digitCount %i\n", digitCount);
-    // printf("startingDigits %li\n", startingDigits);
 
     // Check card type
     if (checkSum % 10 == 0)
