@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <cs50.h>
 
-
 void spaces(int space);
 void hashes(int hash);
 
@@ -25,7 +24,6 @@ int main(void)
         printf("\n");
     }
 }
-
 
 void spaces(int space)
 {
