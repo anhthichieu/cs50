@@ -15,9 +15,10 @@ int main(int argc, string argv[])
     }
     
     // Validate key
-    int keyLength = strlen(argv[1]);
     
     // Check key length
+    int keyLength = strlen(argv[1]);
+    
     if (keyLength != 26)
     {
         printf("Key must contain 26 characters\n");
