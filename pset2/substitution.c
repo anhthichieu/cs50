@@ -15,9 +15,10 @@ int main(int argc, string argv[])
     }
     
     // Validate key
-    int keyLength = strlen(argv[1]);
     
     // Check key length
+    int keyLength = strlen(argv[1]);
+    
     if (keyLength != 26)
     {
         printf("Key must contain 26 characters\n");
@@ -64,12 +65,12 @@ int main(int argc, string argv[])
             // Letter mapping & preserve case
             if (isupper(plainText[i]))
             {
-                printIndex = plainText[i] - 65;
+                printIndex = plainText[i] - 65; // From https://asciichart.com/
                 argv[1][printIndex] = toupper(argv[1][printIndex]);
             }
             else if (islower(plainText[i]))
             {
-                printIndex = plainText[i] - 97;
+                printIndex = plainText[i] - 97; // From https://asciichart.com/
                 argv[1][printIndex] = tolower(argv[1][printIndex]);
             }
             printf("%c", argv[1][printIndex]);
